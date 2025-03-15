@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <!-- Linking CSS  -->
+    <link rel="stylesheet" href="/stylesheets/adminpannel.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <!-- font-awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="heading">Admin Pannel</h1>
+
+      <!-- This will only see in desktop sites  -->
+      <nav class="nav">
+        <a href="/admin">Set New Destination</a>
+        <a href="/users">See Users</a>
+        <a href="/usersBooking">Check Bookings</a>
+      </nav>
+
+      </select>
+
+      <hr />
+
+      <div class="card-form-container">
+        <h1 class="sub-heading">All users :</h1>
+
+        <div class="all-users">
+          <% if(users.length > 0){ %> <% users.forEach((user) => { %>
+          <!-- one user  -->
+          <div class="user-container">
+            <div>
+              <span>Name:</span>
+              <h1 class="user-name"><%= user.username %></h1>
+            </div>
+            <div>
+              <span>Email:</span>
+              <h1 class="user-email"><%= user.email %></h1>
+            </div>
+
+            <a href="/removeUser/<%= user._id%>" class="remove-button">Remove</a>
+          </div>
+          <% }) %> <% } %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

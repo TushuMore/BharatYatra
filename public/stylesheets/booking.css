@@ -1,0 +1,121 @@
+:root {
+  --text-color: #fff;
+  --bg-color: #000;
+  --main-color: #ff914d;
+  --h1-font: 5rem;
+  --h2-font: 3rem;
+  --p-font: 1rem;
+  --section-padding: 7rem;
+}
+
+body {
+  width: 70%;
+  margin: auto;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  background: var(--gray-color);
+  margin-top: 40px;
+}
+
+
+.booking-container{
+  display: flex;
+  width: 100%;
+  height: max-content;
+}
+
+.booking-container .left{
+  display: flex;
+  justify-content: start;
+  align-content: start;
+  width: 50%;
+}
+
+form {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+form label{
+  font-size: 16px;
+  font-weight: 600;
+  padding-top: 10px;
+}
+
+form input {
+  width: 400px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid var(--gray-color);
+  border-radius: 6px;
+  padding: 0 20px;
+  font-size: 16px;
+  margin-top: 5px;
+  color: var(--text-color);
+}
+
+
+form div{
+  display: flex;
+  gap: 10px;
+}
+
+form div input{
+  width: 195px;
+}
+
+form .book-button{
+  margin-top: 20px;
+  background: var(--main-color);
+  color: var(--bg-color);
+  border: none;
+  cursor: pointer;
+}
+
+.right{
+  width: 50%;
+  background: var(--gray-color);
+  margin-top: 40px;
+  background-image: url('../images/booking.jpg');
+  background-position: center;
+  background-size: cover;
+  border-radius: 6px;
+}
+
+
+@media (max-width: 1200px) {
+  .booking-container .left{
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .right{
+    display: none;
+  }
+}
+
+@media (max-width: 500px){
+  body{
+    width: 100%;
+    padding: 0 40px;
+  }
+
+  form input{
+    width: 250px;
+  }
+
+  form div{
+    flex-direction: column;
+  }
+
+  form div input{
+    width: 250px;
+  }
+}

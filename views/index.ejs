@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>
+      Bharat Explorer : Explore the Diversity, Embrace the Beauty of Bharat
+    </title>
+
+    <!-- Linking CSS  -->
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <!-- font-awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- header section start-->
+    <header>
+      <a href="#" class="logo"
+        >Bharat<span class="glob"
+          ><i class="fa fa-globe" aria-hidden="true"></i></span
+        ><span>Yatra</span></a
+      >
+
+      <% if(user){ %> <% if(user.isAdmin){ %>
+      <ul class="navbar">
+        <li><a href="#home">home</a></li>
+        <li><a href="#gallery">gallery</a></li>
+        <li><a href="#destinations">destinations</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#contact">contact</a></li>
+        <li><a href="/admin">Admin</a></li>
+      </ul>
+      <% }else{ %>
+      <ul class="navbar">
+        <li><a href="#home">home</a></li>
+        <li><a href="#gallery">gallery</a></li>
+        <li><a href="#destinations">destinations</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+      <% } %> <% } %>
+      <div class="h-right">
+        <% if(user){ %>
+        <div>
+          <a href="/profile" class="profile-icon">
+            <i class="fa fa-user"></i>
+          </a>
+
+          <p><%= user.username %></p>
+        </div>
+        <% } %>
+
+        <!-- Menu Icon  -->
+        <div class="fa fa-bars navbar-link" id="menu-icon"></div>
+      </div>
+    </header>
+    <!-- header section end-->
+
+    <!-- home section start -->
+    <section class="home" id="home">
+      <div class="home-text">
+        <h5>Let's</h5>
+        <h1>
+          Explore the <br />
+          best places of Great
+        </h1>
+        <h1 class="Big-text">Bharat</h1>
+        <p>
+          "Discover India's wonders, from majestic mountains to vibrant cities,
+          with personalized, unforgettable travel experiences."
+        </p>
+        <a href="/booking" class="btn">Book a trip</a>
+      </div>
+    </section>
+    <!-- home section end-->
+
+    <!-- Gallery section start  -->
+    <section class="section gallery-section" id="gallery">
+      <h1 class="heading">Gallery</h1>
+      <p class="sub-heading">
+        "Explore the world through our lens, stunning destinations,
+        unforgettable moments."
+      </p>
+
+      <!-- Bento grid  -->
+      <div class="main-container">
+        <div class="one image-conatainer"></div>
+        <div class="two image-conatainer"></div>
+        <div class="three image-conatainer"></div>
+        <div class="four image-conatainer"></div>
+        <div class="five image-conatainer"></div>
+        <div class="six image-conatainer"></div>
+        <div class="seven image-conatainer"></div>
+        <div class="eight image-conatainer"></div>
+        <div class="nine image-conatainer"></div>
+        <div class="ten image-conatainer"></div>
+      </div>
+    </section>
+    <!-- Gallery section ends  -->
+
+    <!-- Categories section start  -->
+    <section class="section categories categories-section" id="Category">
+      <h1 class="heading">Categories</h1>
+      <p class="sub-heading">
+        "Explore the diversity of Bharat, find your next destination in our
+        handpicked categories."
+      </p>
+
+      <div class="categories-content">
+        <div class="row">
+          <div class="row-img">
+            <img src="images/beach.jpg" alt="" />
+          </div>
+          <h4>Beach</h4>
+        </div>
+        <div class="row">
+          <div class="row-img">
+            <img src="images/desert.jpg" alt="" />
+          </div>
+          <h4>Desert</h4>
+        </div>
+        <div class="row">
+          <div class="row-img">
+            <img src="images/10.jpg" alt="" />
+          </div>
+          <h4>Mountain</h4>
+        </div>
+        <div class="row">
+          <div class="row-img">
+            <img src="images/9.jpg" alt="" />
+          </div>
+          <h4>Temple</h4>
+        </div>
+        <div class="row">
+          <div class="row-img">
+            <img src="images/hiking.jpg" alt="" />
+          </div>
+          <h4>Hills</h4>
+        </div>
+        <div class="row">
+          <div class="row-img">
+            <img src="images/hero.jpg" alt="" />
+          </div>
+          <h4>River</h4>
+        </div>
+      </div>
+    </section>
+    <!-- Categories section ends -->
+
+    <!-- Destination Cards section starts -->
+    <section class="section destinations" id="destinations">
+      <h1 class="heading">Destination</h1>
+      <p class="sub-heading">
+        "Discover iconic destinations, hidden gems, and everything in between,
+        your journey starts here."
+      </p>
+      <div class="destination-content">
+        <% if(cards.length > 0){ %> <% cards.forEach((card) => { %>
+        <div class="box">
+          <img src="/images/<%= card.image %>" alt="card-image" />
+          <h4><%= card.cardName %></h4>
+          <h6><%= card.location %></h6>
+          <div class="row">
+            <p><b>₹<%= card.price %></b>/person</p>
+            <a href="/booking" class="button">Book Now</a>
+          </div>
+        </div>
+        <% }) %> <% } %>
+
+      </div>
+    </section>
+    <!-- Destination Cards section ends -->
+
+    <!-- Services Section starts -->
+    <section class="section">
+      <h1 class="heading">Services</h1>
+      <p class="sub-heading">
+        "Your journey, our expertise, explore our premium travel services for a
+        hassle-free adventure."
+      </p>
+
+      <div class="services">
+        <!-- First service  -->
+        <div class="service">
+          <i class="fa fa-paper-plane icon" aria-hidden="true"></i>
+          <h1>Fast Travell</h1>
+          <p>
+            "Fast Travel: Speedy, reliable rides that get you where you need to
+            go—quickly and comfortably."
+          </p>
+        </div>
+
+        <!-- Second service  -->
+        <div class="service">
+          <i class="fa fa-heartbeat icon" aria-hidden="true"></i>
+          <h1>Security</h1>
+          <p>
+            "Full Security: Your safety, our priority. Quick, reliable
+            protection when you need it most."
+          </p>
+        </div>
+
+        <!-- Third service  -->
+        <div class="service">
+          <i class="fa fa-leaf icon" aria-hidden="true"></i>
+          <h1>Eco-Friendly</h1>
+          <p>
+            "Eco Friendly Service: Sustainable choices that protect the planet,
+            one step at a time.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section ends -->
+
+    <!-- contact section starts  -->
+    <section class="section" id="contact">
+      <h1 class="heading">Contact</h1>
+      <p class="sub-heading">
+        "Your next adventure starts here, contact us today to plan your dream
+        getaway!"
+      </p>
+
+      <div class="contact-container">
+        <!-- right part -->
+        <div class="right">
+          <h4>Contact Us</h4>
+          <p>
+            "Your dream vacation is just a click away! 🌍✈️ Let us plan your perfect getaway—contact us today!"
+          </p>
+
+          <div class="contact-info">
+            <!-- one info box : Phone  -->
+            <div class="one-row">
+              <div class="icon"><i class="fa fa-phone"></i></div>
+              <div class="one-info">
+                <span class="name">Phone</span>
+                <span class="value">+91 901147615</span>
+              </div>
+            </div>
+            <!-- one info box : Email  -->
+            <div class="one-row">
+              <div class="icon"><i class="fa fa-envelope"></i></div>
+              <div class="one-info">
+                <span class="name">Email</span>
+                <span class="value">bharatyatra108@gmail.com</span>
+              </div>
+            </div>
+            <!-- one info box : Address  -->
+            <div class="one-row">
+              <div class="icon"><i class="fa fa-map"></i></div>
+              <div class="one-info">
+                <span class="name">Address</span>
+                <span class="value">At post Jamner</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- left part -->
+        <div class="left">
+          <h4>Get In Touch</h4>
+          <p>
+            "Ready to explore the world? 🌍 Fill out the form below, and we will craft your perfect travel experience!"
+          </p>
+          <form action="/contact" method="post" autocomplete="off" class="form">
+            <input
+              class="input"
+              type="email"
+              placeholder="Enter your email.."
+              name="contactEmail"
+            />
+            <textarea placeholder="Enter your query.." name="query"></textarea>
+
+            <input type="submit" class="submit-btn" />
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- contact section ends  -->
+
+    <!-- footer section start -->
+    <section class="footer">
+      <div class="footer-box">
+        <a href="#" class="logo" style="font-size: 20px"
+          >Bharat<i class="fa fa-globe icon" aria-hidden="true"></i
+          ><span>Yatra</span></a
+        >
+        <p>Enjoy the touring with TravelAround Great Bharat</p>
+        <div class="social">
+          <a href="https://www.instagram.com/tushu_more/"><i class="fa fa-instagram"></i></a>
+          <a href="https://github.com/TushuMore"><i class="fa fa-github"></i></a>
+          <a href="https://www.youtube.com/@TSMCode"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <!-- <div class="footer-box">
+        <h3>Company</h3>
+        <a href="#">Travelling</a>
+        <a href="#">About Location</a>
+        <a href="#">Information</a>
+      </div>
+      <div class="footer-box">
+        <h3>Resources</h3>
+        <a href="#">Help Center</a>
+        <a href="#">Guide Book</a>
+      </div>
+      <div class="footer-box">
+        <h3>Travellers</h3>
+        <a href="#">Why BharatYatra</a>
+        <a href="#">Customer Stories</a>
+      </div> -->
+    </section>
+    <!-- footer section end -->
+
+    <!-- copyright section -->
+    <div class="copyright">
+      <p>© Copyright 2025 | Developed by Tushar More | All rights reserved.</p>
+    </div>
+
+    <!-- Adding custom JS  -->
+    <script src="../javascripts/script.js"></script>
+  </body>
+</html>

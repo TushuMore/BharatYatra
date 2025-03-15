@@ -1,0 +1,216 @@
+:root {
+  --text-color: #fff;
+  --bg-color: #000;
+  --main-color: #ff914d;
+  --gray-color: #acacac;
+  --h1-font: 5rem;
+  --h2-font: 3rem;
+  --p-font: 1rem;
+  --section-padding: 7rem;
+}
+
+body {
+  width: 70%;
+  margin: auto;
+}
+
+/* main container styling  */
+.nav {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.nav a {
+  color: var(--text-color);
+  font-size: 20px;
+  transition: all ease-in-out 0.3s;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+  color: var(--main-color);
+}
+
+#data-dropdown {
+  display: none;
+  margin-top: 40px;
+  background: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--gray-color);
+  border-radius: 6px;
+  padding: 5px 15px;
+  font-weight: 700;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  background: var(--gray-color);
+  margin-top: 40px;
+}
+
+.sub-heading {
+  margin: 40px 0;
+}
+
+#data-dropdown option {
+  color: var(--text-color);
+  background: var(--bg-color);
+  border: 1px solid var(--gray-color);
+  border-radius: 6px;
+  height: max-content;
+}
+
+.card-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+
+.card-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-form-container form input {
+  width: 400px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid var(--gray-color);
+  border-radius: 6px;
+  padding: 0 20px;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.card-form-container form label {
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+.card-form-container form .file-input {
+  border: 0px;
+  padding: 0;
+}
+
+.card-form-container .remove-button {
+  background: red;
+  text-decoration: none;
+  width: max-content;
+  padding: 5px 10px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 6px;
+  color: (var(--text));
+}
+
+.card-form-container form .submit-btn {
+  width: max-content;
+  background: var(--main-color);
+  color: var(--bg-color);
+  cursor: pointer;
+}
+
+/* users Styling  */
+.all-users {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 20px;
+}
+
+.user-container {
+  display: flex;
+  width: max-content;
+  flex-direction: column;
+  border: 1px solid var(--gray-color);
+  padding: 20px 20px;
+  padding-right: 50px;
+  border-radius: 6px;
+}
+
+.user-container div {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.user-container div span {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--gray-color);
+}
+
+.user-container div h1 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.user-container button {
+  width: max-content;
+  padding: 5px 15px;
+  background: rgb(226, 64, 64);
+  border-radius: 6px;
+  color: var(--text-color);
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: start;
+  justify-content: start;
+  margin-bottom: 40px;
+}
+
+.contacts div{
+  width: 350px;
+  height: max-content;
+  border: 1px solid var(--gray-color);
+  border-radius: 6px;
+  padding: 20px 20px;
+}
+
+.contacts div p:nth-child(2){
+  margin-bottom: 20px;
+}
+
+.contacts p{
+    font-size: 18px;
+    text-wrap:initial;
+}
+
+.contacts p span{
+  color: var(--gray-color);
+}
+
+.contacts .deleteBtn{
+  color: var(--text-color);
+  border-radius: 6px;
+  background: rgb(255, 55, 55);
+  padding: 5px 15px;
+}
+
+/* Responsive CSS  */
+@media (max-width: 800px) {
+  body {
+    width: 90%;
+  }
+
+  .nav a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 450px) {
+  .card-form-container form input {
+    width: 300px;
+  }
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Your Journey</title>
+    <!-- Linking CSS  -->
+    <link rel="stylesheet" href="/stylesheets/signup.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1 class="heading">Signup To BharatYatra</h1>
+
+    <hr />
+    <div>
+      <form action="/create" method="post" autocomplete="off">
+        <input type="text" placeholder="Username" name="username"/>
+        <input type="email" placeholder="Email" name="email"/>
+        <input type="password" placeholder="Password" name="password"/>
+        <input type="submit" class="signup-btn" value="Signup" />
+      </form>
+      <p>Alredy have an account? <a href="/login">Login</a></p>
+    </div>
+  </body>
+</html>

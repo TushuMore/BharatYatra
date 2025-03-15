@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <!-- Linking CSS  -->
+    <link rel="stylesheet" href="/stylesheets/adminpannel.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <!-- font-awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="heading">Admin Pannel</h1>
+
+      <!-- This will only see in desktop sites  -->
+      <nav class="nav">
+        <a href="/admin">Set New Destination</a>
+        <a href="/users">See Users</a>
+        <a href="/usersBooking">Check Bookings</a>
+      </nav>
+
+      <hr />
+
+      <div class="card-form-container">
+        <h1 class="sub-heading">Create a new destination booking card :</h1>
+
+        <form action="/postCard" method="post" autocomplete="off">
+          <input type="text" placeholder="Name" name="cardName" />
+          <input type="text" placeholder="Location" name="location" />
+          <input type="text" placeholder="Pricing" name="price" />
+          <label for="file">Choose image</label>
+          <input type="file" name="image" class="file-input" />
+
+          <input type="submit" class="submit-btn" value="Create" />
+        </form>
+      </div>
+
+      <div class="contacts">
+        <h1 class="sub-heading">Contacts messages :</h1>
+
+        <% if(contacts.length > 0){ %> <% contacts.forEach((contact) => { %>
+        <div>
+          <p>Email : <span><%= contact.email %></span></p>
+          <p>Query : <span><%= contact.query %></span></p>
+
+          <a href="/deleteContact/<%= contact._id %>" class="deleteBtn">Delete</a>
+        </div>
+        <% }) %> <% } %>
+      </div>
+    </div>
+  </body>
+</html>

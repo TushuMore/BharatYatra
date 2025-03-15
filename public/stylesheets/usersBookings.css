@@ -1,0 +1,46 @@
+.all-containers{
+    display: flex;
+    align-items: start;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.booking-container{
+    display: flex;
+    align-items: start;
+    justify-content: s;
+    flex-direction: column;
+    gap: 5px;
+    border: 1px solid var(--gray-color);
+    padding: 30px 20px;
+    padding-right: 60px;
+
+}
+
+.one-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p{
+    font-size: 18px;
+    min-width: 100px;
+}
+
+.one-row span{
+    color: var(--gray-color);
+}
+
+.one-row div{
+    color: var(--gray-color);
+}
+
+.booking-container a{
+    color: var(--text-color);
+    border: 1px solid transparent;
+    background: rgb(255, 49, 49);
+    padding: 5px 15px;
+    border-radius: 6px;
+}

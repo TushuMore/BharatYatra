@@ -1,0 +1,65 @@
+body {
+  width: 50%;
+  margin: auto;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  background: var(--gray-color);
+  margin-top: 40px;
+}
+
+body div{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: max-content;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+form input {
+  width: 400px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid var(--gray-color);
+  border-radius: 6px;
+  padding: 0 20px;
+  font-size: 16px;
+  margin-top: 20px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+form .signup-btn {
+  background: var(--main-color);
+  color: var(--bg-color);
+  border: none;
+}
+
+p {
+  float: left;
+  padding-top: 20px;
+}
+
+p a{
+  color: rgb(30, 109, 255);
+  text-decoration: underline;
+}
+
+@media (max-width: 1050px) {
+  body{
+    width: 100%;
+    padding: 0 40px;
+  }
+
+  form input {
+    width: 250px;
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <!-- Linking CSS  -->
+    <link rel="stylesheet" href="/stylesheets/profile.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <!-- font-awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="heading">Profile</h1>
+
+      <hr />
+
+      <div class="profile-container">
+        <div class="info">
+          <% if(user){ %>
+          <!-- Profile Image  -->
+          <div class="avatar">
+            <img src="/images/avatar.png" alt="avatar" />
+          </div>
+          <!-- user Info  -->
+          <div>
+            <span><%= user.username %></span>
+            <span><%= user.email %></span>
+          </div>
+          <% } %>
+
+          <a href="/logout" class="nav-btn">Logout</a>
+        </div>
+      </div>
+
+      <h2 class="subheading">My Bookings</h2>
+      <!-- Users Booking Data  -->
+      <div class="booking-data">
+        <% if(bookings.length > 0){ %> <% bookings.forEach((booking) => { %>
+        <!-- Single Booking -->
+        <div>
+          <p>
+            <span><%= booking.from %></span> to
+            <span><%= booking.where %></span>
+          </p>
+          <p>Total Persons: <span><%= booking.totalPerson %></span></p>
+
+          <a href="/cancleBooking/<%= booking._id %>" class="cancle-btn"
+            >Cancle</a
+          >
+        </div>
+        <% }) %> <% } %>
+      </div>
+    </div>
+  </body>
+</html>

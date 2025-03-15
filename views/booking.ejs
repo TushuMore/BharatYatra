@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Your Journey</title>
+    <!-- Linking CSS  -->
+    <link rel="stylesheet" href="/stylesheets/booking.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+    <h1 class="heading">Book Your Trip!</h1>
+    <p class="sub-heading">
+        "Adventure awaits! Book your trip now and explore the world like never before."
+      </p>
+
+    <hr/>
+
+    <div class="booking-container">
+        <!-- Left Part  -->
+        <div class="left">
+            <form action="/book" method="post" autocomplete="off">
+
+                <!-- Fullname  -->
+                <label for="name">Full Name</label>
+                <input type="text" placeholder="Enter Your fullname" name="customerName">
+        
+                <!-- Email -->
+                <label for="email">Email</label>
+                <input type="email" placeholder="Enter Your Email" name="customerEmail">
+                
+                <!-- Mobile Number -->
+                <label for="mobile">Mobile Number</label>
+                <input type="number" placeholder="Enter Your Mobile Number" name="mobileNo">
+        
+                <!-- Totle Persons -->
+                <label for="persons">Total Persons</label>
+                <input type="number" placeholder="Enter Total Persons" name="totalPerson">
+        
+                <!-- Destination  -->
+                <label for="destination">Destination</label>
+                <div>
+                    <input type="from" placeholder="From" name="from">
+                    <input type="where" placeholder="Where" name="where">
+                </div>
+        
+                <!-- Submit Button  -->
+                <input type="submit" value="Book" class="book-button">
+        
+            </form>
+        </div>
+
+        <!-- Right part  -->
+
+        <div class="right">
+
+        </div>
+    </div>
+</body>
+</html>
