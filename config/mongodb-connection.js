@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose
-.connect('mongodb://127.0.0.1:27017/bharatYatra')
+.connect('mongodb+srv://tusharmore2143:vpevT5gUwdOad7EJ@bharatyatra.u56b2.mongodb.net/')
 .then(() => {
     console.log('DBConnected');    
 })
